@@ -1,4 +1,4 @@
-### A seção 5 do curso introduz herança e polimorfismo, com conceitos como:
+### A seção 10 do curso introduz herança e polimorfismo, com conceitos como:
 
 - Upcasting, downcasting
 - Sobreposição, virtual, override, base
