@@ -86,3 +86,91 @@ Produto p4 = new Produto {
     Quantidade = quantidade 
 };
 ```
+
+#### Encapsulamento
+
+Esconder detalhes de implementação de componente de forma a expor apenas operações seguras e que o mantenha em um estado consistente.
+
+Três formas de se fazer isso:
+
+1. Implementação manual, *não* é usual em C#
+
+- Implementa-se get/set para cada atributo de forma customizada e todo atributo é dito private.
+
+```csharp
+//Na classe Produto.cs
+private string _nome;
+private string _preco;
+private int quantidade;
+
+public string GetNome(){
+    return _nome;
+}
+
+public string SetNome(string nome){
+    if (nome != null & nome.Length > 1){
+        _nome = nome;
+    }
+}
+
+public string GetPreco(string preco){
+    return _preco;
+}
+
+//Na classe Program.cs
+Produto p = new Produto();
+p.SetNome("Produto 1");
+string nome = p.GetNome();
+```
+
+2. Uso de Properties
+
+Uma propriedade é um membro que oferece um mecanismo flexível para ler, gravar ou calcular o valor de um campo particular. Elas podem ser usadas como se fossem atributos públicos, porém são métodos especiais chamados "acessadores" 
+
+A palavra reservada *value* representa o parâmetro de entrada do método *set*
+
+```csharp
+
+//Na classe ProdutoEncapsulaProperties.cs
+private string _nome;
+
+public string Nome {
+    get { return _nome; }
+    set {
+        if (value != null & value.Length > 1){
+            _nome = nome;
+         }
+    }
+}
+
+//Na classe Program.cs
+var prod2 = new ProdutoEncapsulaProperties();
+prod2.Nome = "Produto2";
+var nomeProd2 = prod2.Nome;
+
+```
+
+3. Uso de Autoproperties
+
+Usado quando queremos declarar propriedades que não necessitam de lógicas particulares de *get* e *set*
+
+```csharp
+//Na classe ProdutoEncapsulaAutoProperties.cs
+public string Nome { get; private set; }
+
+//Na classe Program.cs
+var prod3 = new ProdutoEncapsulaAutoproperties();
+prod3.Nome = "Produto3";
+var nomeProd3 = prod3.Nome;
+
+```
+
+### Ordem sugerida para implementação de classes 
+
+Indicada em *ProdutoOrdemRecomendada.cs*
+
+1. Atributos privados
+2. Propriedades autoimplementadas
+3. Construtores
+4. Propriedades customizadas
+5. Outros métodos da classe

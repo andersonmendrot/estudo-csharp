@@ -13,16 +13,6 @@ namespace Secao5Udemy
         public string Nome;
         public double Preco;
         public int Quantidade;
-
-
-        //construtor: utilizado para inicializar valores dos atributos ou para permitir/obrigado que o objeto receba dados no momento de sua instanciação (injeção de dependencias)
-
-        //sobrecarga: é um recurso que uma classe possuo de oferecer mais de uma operação com o mesmo nome, porém com diferentes listas de parâmetros
-
-        //uso de this:
-        //1 - diferenciar atributos de variáveis locais (mais usado em Java)
-        //2 - referenciar outro construtor em um construtor
-        //3 - passar o proprio objeto como argumento na chamada de um método ou construtor
         
         //construtor padrão
         public Produto()
@@ -49,17 +39,6 @@ namespace Secao5Udemy
             Nome = nome;
             Preco = preco;
         }
-
-        ////////////////////////////////////////////////
-
-        // Encapsulamento
-        // Esconder detalhes de implementação de um componente expondo apenas operações seguras e que o mantenha em um estado consistente
-
-
-
-
-
-        ////////////////////////////////////////////////
 
         //métodos começam com letra maiúscula
         public double ValorTotalEmEstoque()
