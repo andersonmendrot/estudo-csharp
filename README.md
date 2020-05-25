@@ -5,8 +5,8 @@
 
 #### Seções:
 
-4 - Classes, objetos, atributos e membros estáticos
-5 - Construtores, palavra this, sobrecarga, encapsulamento
-10 - Herança e Polimorfismo
+- Seção 4. Classes, objetos, atributos e membros estáticos
+- Seção 5. Construtores, palavra this, sobrecarga, encapsulamento
+- Seção 10. Herança e Polimorfismo
 
 
