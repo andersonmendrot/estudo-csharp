@@ -1,3 +1,8 @@
-### Implementações e anotações realizadas para o seguinte curso de Programação Orientada a Objetos de C# da Udemy 
+### Implementações e anotações realizadas para os cursos:
 
-https://www.udemy.com/course/programacao-orientada-a-objetos-csharp
+- Programação Orientada a Objetos de C#: https://www.udemy.com/course/programacao-orientada-a-objetos-csharp
+- AceleraDev C# da CodeNation
+
+
+
+
