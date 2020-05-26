@@ -30,7 +30,6 @@ namespace Secao10Udemy
                 BusinessAccount acc6 = (BusinessAccount)acc3;
                 BusinessAccount acc7 = acc3 as BusinessAccount;
             }
-
         }
     }
 }

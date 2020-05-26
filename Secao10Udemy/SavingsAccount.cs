@@ -21,5 +21,10 @@ namespace Secao10Udemy
         {
             Balance += Balance * InterestRate;
         }
+
+        public override void Withdraw(double amount)
+        {
+            Balance -= amount - 2.0;
+        }
     }
 }

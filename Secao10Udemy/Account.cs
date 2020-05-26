@@ -18,7 +18,7 @@
             Balance = balance;
         }
 
-        public void Withdraw(double amount)
+        public virtual void Withdraw(double amount)
         {
             Balance -= amount;
         }
