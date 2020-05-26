@@ -1,4 +1,8 @@
-### A seção 5 do curso introduz herança e polimorfismo
+### A seção 10 do curso introduz herança e polimorfismo, com conceitos como:
+
+- Upcasting, downcasting
+- Sobreposição, virtual, override, base
+- Classes e métodos selados e abstratos
 
 ##### Herança ou extensão
 
@@ -91,6 +95,3 @@ public override void Withdraw(double amount)
 }
 //
 ```
-
-
-
