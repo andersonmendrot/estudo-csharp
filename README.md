@@ -22,7 +22,7 @@
 3. Herança e polimorfismo
 4. Classes e métodos abstratos e selados
 
- - Seção 11
+- Seção 11
 1. Interface
 
 #### Módulos do curso AceleraDev
