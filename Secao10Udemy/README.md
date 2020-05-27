@@ -62,7 +62,7 @@ Um atributo pode somente ser alterado pela própria classe ou por alguma subclas
 Implementação de método de superclasse na subclasse.
 
 - Virtual: deve ser incluso em métodos comuns (ou seja, não abstratos) caso haja a necessidade de que sejam sobrepostos
-- Override: deve ser incluso ao sobrescrever um método
+- Override: deve ser incluso ao sobrescrever um método (é utilizado tanto para a parte de virtual como também para a sobrescrita de métodos *abstratos*)
 
 ex. Caso queiramos criar uma nova regra para saque (withdraw) na subclasse SavingsAccount (counta poupança), poderemos fazer da seguinte forma:
 
