@@ -97,7 +97,6 @@ public override void Withdraw(double amount)
     base.Withdraw(amount);
     Balance -= 2.0
 }
-//
 ```
 
 ##### Classes e métodos sealed
@@ -171,11 +170,11 @@ public abstract Account{
 
     public Account()
     {
-	}
+    }
 
     public int Method1(int value){
         return value;
-	}
+    }
 
     public abstract double AbstractMethod();
 }
@@ -183,6 +182,6 @@ public abstract Account{
 public SavingsAccount : Account{
     public override double AbstractMethod(){
         return 2.0;
-	}
+    }
 }
 ```
