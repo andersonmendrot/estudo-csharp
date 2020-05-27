@@ -1,8 +1,4 @@
-### A seção 10 do curso introduz herança e polimorfismo, com conceitos como:
-
-- Upcasting, downcasting
-- Sobreposição, virtual, override, base
-- Classes e métodos selados e abstratos
+### A seção 5 do curso introduz herança e polimorfismo
 
 ##### Herança ou extensão
 
@@ -94,4 +90,91 @@ public override void Withdraw(double amount)
     Balance -= 2.0
 }
 //
+```
+
+##### Classes e métodos sealed
+
+- As classes sealed impedem a derivação
+- Não podem ser usadas como uma classe base (ou seja, não podem ser uma classe abstrata) 
+
+- Classe: evita que a classe seja herdada
+
+```csharp
+sealed class SavingsAccount {
+    ...
+}
+```
+
+- Método: evita que método sobreposto (ou seja, com *override*) possa ser sobreposto novamente
+
+```csharp
+//na classe SavingsAccount.cs
+
+public sealed override void Withdraw {
+    ...
+}
+```
+
+##### Polimorfirmo
+
+Permite que variáveis de mesmo tipo mais genéricos apontem para outras de tipos específicos diferentes, de forma que tenham comportamentos diferentes de acordo com o tipo específico.
+
+```csharp
+//na classe Program.cs
+Account acc1 = new Account(1001,"Alex", 500.00);
+Account acc2 = new SavingsAccount(1002, "Anna", 500.0, 0.01);
+
+//na classe Account.cs
+public virtual void Withdraw(double amount){
+    Balance -= amount + 5.0;
+}
+
+//na classe SavingsAccount.cs
+public override void Withdraw(double amount){
+    base.Withdraw(amount);
+    Balance -= 2.0;
+}
+```
+
+Se for chamado *acc1.Withdraw(10.0)*, o valor de Balance será 500-5 = 490. Ou seja, *acc1* é um *Account*.
+
+Se for chamado *acc2.Withdraw(10.0)*, o valor de Balance será 500-5-2 = 488. Ou seja, *acc2* é um *SavingsAccount*. Além disso, acc2 também é um Account.
+
+Dessa forma, as variáveis acc1 e acc2, que se encontram na stack, apontam para duas instanciações diferentes de *Account* e *SavingsAccount* na heap.
+
+A associação do tipo específico com o tipo genérico é feita em tempo de execução (upcasting). O compilador não sabe para qual tipo específico a chamada do método Withdraw está sendo feita, apenas que são duas variáveis do tipo *Account*.
+
+
+##### Classe abstrata
+
+- Permite que você crie classes e membros de classe que estão incompletos e devem ser implementados em uma classe derivada.
+- *PODE* conter ou *NÃO* métodos abstratos (métodos sem corpo)
+- Pode conter também implementações completas, como métodos, atributos e construtores.
+- Tipo especial de classe que não há como criar instâncias dela.
+- Usada apenas para ser herdada, funciona como uma superclasse.
+- Uma grande vantagem é que força a hierarquia para todas as subclasses.
+- Diferença para interface é que a única função desta é permitir a declaração de cabeçalhos de métodos.
+- É obrigatório que suas classes derivadas implementem os métodos abstratos.
+
+```csharp
+public abstract Account{
+    
+    public int Number { get; set; }
+
+    public Account()
+    {
+	}
+
+    public int Method1(int value){
+        return value;
+	}
+
+    public abstract double AbstractMethod();
+}
+
+public SavingsAccount : Account{
+    public override double AbstractMethod(){
+        return 2.0;
+	}
+}
 ```
