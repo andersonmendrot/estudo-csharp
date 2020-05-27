@@ -5,18 +5,18 @@
 
 #### Seções do curso da Udemy:
 
-- Seção 4
+- Seção 4 : https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao4Udemy/README.md
 1. Objetos e classe
 2. Membros estáticos
 
-- Seção 5
+- Seção 5 : https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao5Udemy/README.md
 1. Construtor
 2. Sobrecarga
 3. Palavra this
 4. Encapsulamento
 5. Modificadores de acesso
 
-- Seção 10
+- Seção 10 : https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao10Udemy/README.md
 1. Upcasting e downcasting
 2. Sobreposição, virtual, override, base 
 3. Herança e polimorfismo
