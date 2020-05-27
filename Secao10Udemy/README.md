@@ -55,7 +55,15 @@ BusinessAccount acc3 = acc1 as BusinessAccount;
 
 ##### Modificador de acesso *protected*
 
-Um atributo pode somente ser alterado pela própria classe ou por alguma subclasse dentro ou fora do *assembly*. A classe Program.cs, por exemplo, não possui privilégios para setar valores ao atributo *number*.
+Um atributo pode somente ser alterado pela própria classe ou por alguma subclasse dentro ou fora do *assembly*. A classe Program.cs, por exemplo, não possui privilégios para setar valores ao atributo *number* de Account, porém SavingsAccount e BusinessAccount possuem.
+
+```csharp
+
+//superclasse
+public class Account
+{
+    public int Number { get; protected set; }
+}
 
 ##### Sobreposição ou sobrescrita (uso de virtual/override)
 
