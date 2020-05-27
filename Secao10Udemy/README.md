@@ -55,14 +55,22 @@ BusinessAccount acc3 = acc1 as BusinessAccount;
 
 ##### Modificador de acesso *protected*
 
-Um atributo pode somente ser alterado pela própria classe ou por alguma subclasse dentro ou fora do *assembly*. A classe Program.cs, por exemplo, não possui privilégios para setar valores ao atributo *number*.
+Um atributo pode somente ser alterado pela própria classe ou por alguma subclasse dentro ou fora do *assembly*. A classe Program.cs, por exemplo, não possui privilégios para setar valores ao atributo *number* de Account, porém SavingsAccount e BusinessAccount possuem.
+
+```csharp
+
+//superclasse
+public class Account
+{
+    public int Number { get; protected set; }
+}
 
 ##### Sobreposição ou sobrescrita (uso de virtual/override)
 
 Implementação de método de superclasse na subclasse.
 
 - Virtual: deve ser incluso em métodos comuns (ou seja, não abstratos) caso haja a necessidade de que sejam sobrepostos
-- Override: deve ser incluso ao sobrescrever um método
+- Override: deve ser incluso ao sobrescrever um método (é utilizado tanto para a parte de virtual como também para a sobrescrita de métodos *abstratos*)
 
 ex. Caso queiramos criar uma nova regra para saque (withdraw) na subclasse SavingsAccount (counta poupança), poderemos fazer da seguinte forma:
 
@@ -89,7 +97,6 @@ public override void Withdraw(double amount)
     base.Withdraw(amount);
     Balance -= 2.0
 }
-//
 ```
 
 ##### Classes e métodos sealed
@@ -163,11 +170,11 @@ public abstract Account{
 
     public Account()
     {
-	}
+    }
 
     public int Method1(int value){
         return value;
-	}
+    }
 
     public abstract double AbstractMethod();
 }
@@ -175,6 +182,6 @@ public abstract Account{
 public SavingsAccount : Account{
     public override double AbstractMethod(){
         return 2.0;
-	}
+    }
 }
 ```
