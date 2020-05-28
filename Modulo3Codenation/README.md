@@ -142,7 +142,7 @@ static void Main() {
 }
 ```
 
-#### Extension Methods
+## 2. Extension methods
 
 Métodos que estendem a funcionalidade de um tipo, sem que seja necessário mudar o código fonte do tipo, nem herdar do tipo.
 
