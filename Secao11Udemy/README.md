@@ -109,35 +109,3 @@ class Employee : IComparable
     }
 ```
 
-Podemos também implementar um método que usa IComparable, como no exemplo, que retorna o maior item dentro da lista. O retorno da lista é um tipo T, a lista como parâmetro é parametrizada com o tipo T e a função também é. O método apenas funciona se T implementa IComparable. 
-
-```csharp
-
-class EmployeeService 
-{
-    public T Max<T>(List<T> list) where T: IComparable
-    {
-        T max = list[0];
-        for(int i = 0; i < list.Count; i++)
-        {
-            if(list[i].CompareTo(max) > 0)
-            {
-                max = list[i];
-            }
-        }
-        return max;
-    }
-}
-
-```
-
-Dado que Employee implementa IComparable, então ele poderia utilizar esse método, o qual poderia ser utilizado no programa principal da seguinte forma, e *max* conteria o "maior" empregad 
-
-```csharp
-static void Main() {
-    List<Employee> list = new List<Employee>();
-    ...
-    EmployeeService employeeService = new EmployeeService();
-    Employee max = employeeService.Max(list);
-}
-```
