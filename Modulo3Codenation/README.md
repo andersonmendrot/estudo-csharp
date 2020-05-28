@@ -175,7 +175,7 @@ static void Main() {
 }
 ```
 
-### Exception
+## 3. Exception
 
 Duas formas de se trabalhar com exceções aparecem abaixo. É possível lançar uma exceção de acordo com alguma necessidade do negócio, assim como é possível utilizar um bloco try-catch, inclusive podendo ter vários blocos catch, desde os mais específicos até um mais geral denominado Exception.
 
