@@ -1,6 +1,6 @@
 ### A seção 6 do curso introduz interfaces
 
-Interfaces são usadas para estabelecer um contrato entre uma classe, de forma que ela caso deseje utilizar a interface deve implementar as funções cujas declarações estão contidas na interface. É utilizada para desacoplamento de código, como no exemplo abaixo. Nele, há um diagrama de classes que representa um possível uso de interfaces.
+Interfaces são usadas para estabelecer um contrato entre uma classe, de forma que ela caso deseje utilizar a interface deve implementar as funções cujas declarações estão contidas na interface. Em C#, não se pode utilizar modificadores de acesso nos membros da interface pois são por padrão todos publicos. É utilizada para desacoplamento de código, como no exemplo abaixo. Nele, há um diagrama de classes que representa um possível uso de interfaces.
 
 ![diagrama](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao11Udemy/diagram.png)
 
@@ -62,5 +62,19 @@ static void Main {
     ...
     RentalService rentalService = new RentalService(..., new BrazilTaxService());
     ...
+}
+```
+
+Uma interface também pode definir propriedades, as quais devem ser implementadas em uma classe que herda tal interface. 
+
+```csharp
+interface ICalculoValor
+{
+    decimal ValorBruto { get; set; }
+}
+
+class Calculo : ICalculoValor
+{
+    public decimal ValorBruto { get; set; }
 }
 ```
