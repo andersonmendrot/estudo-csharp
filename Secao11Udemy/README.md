@@ -1,4 +1,4 @@
-### A seção 6 do curso introduz interfaces
+### A seção 6 do curso introduz interfaces e IComparable
 
 Interfaces são usadas para estabelecer um contrato entre uma classe, de forma que ela caso deseje utilizar a interface deve implementar as funções cujas declarações estão contidas na interface. Em C#, não se pode utilizar modificadores de acesso nos membros da interface pois são por padrão todos publicos. É utilizada para desacoplamento de código, como no exemplo abaixo. Nele, há um diagrama de classes que representa um possível uso de interfaces.
 
@@ -58,7 +58,7 @@ Além disso, outro conceitos associados são o de *injeção de dependência* e 
 - *Injeção de dependência* é uma das formas de inversão de controle, quando um componente externo "injeta" uma dependência no objeto pai. O exemplo seguinte mostra uma injeção de dependência em um construtor, no caso, do programa principal no construtor do RentalService no lugar de ITaxService.
 
 ```csharp
-static void Main {
+static void Main() {
     ...
     RentalService rentalService = new RentalService(..., new BrazilTaxService());
     ...
@@ -76,5 +76,68 @@ interface ICalculoValor
 class Calculo : ICalculoValor
 {
     public decimal ValorBruto { get; set; }
+}
+```
+
+### IComparable
+
+Utilizado para realizar comparações entre diferentes objetos Current e Other, de forma que:
+
+```csharp
+public interface IComparable {
+    int CompareTo(object other);
+}
+```
+
+- Se Current for maior que Other, então CompareTo retorna 1. Caso sejam iguais, o método returna 0, e caso seja menor, retorna -1. Abaixo se encontra um exemplo de implementação.
+
+```csharp
+class Employee : IComparable
+{
+    public string Name { get; set; }
+    public double Salary { get; set; }
+
+    public int CompareTo(object obj)
+    {
+        if (!(obj is Employee))
+        {
+            throw new ArgumentException("Comparing error: argument is not an employee");
+        }
+
+        Employee other = (Employee)obj;
+        return Salary.CompareTo(other.Salary);
+    }
+```
+
+Podemos também implementar um método que usa IComparable, como no exemplo, que retorna o maior item dentro da lista. O retorno da lista é um tipo T, a lista como parâmetro é parametrizada com o tipo T e a função também é. O método apenas funciona se T implementa IComparable. 
+
+```csharp
+
+class EmployeeService 
+{
+    public T Max<T>(List<T> list) where T: IComparable
+    {
+        T max = list[0];
+        for(int i = 0; i < list.Count; i++)
+        {
+            if(list[i].CompareTo(max) > 0)
+            {
+                max = list[i];
+            }
+        }
+        return max;
+    }
+}
+
+```
+
+Dado que Employee implementa IComparable, então ele poderia utilizar esse método, o qual poderia ser utilizado no programa principal da seguinte forma, e *max* conteria o "maior" empregad 
+
+```csharp
+static void Main() {
+    List<Employee> list = new List<Employee>();
+    ...
+    EmployeeService employeeService = new EmployeeService();
+    Employee max = employeeService.Max(list);
 }
 ```
