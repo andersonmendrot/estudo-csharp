@@ -205,3 +205,137 @@ static void Main()
     }
 }
 ```
+
+#### Coleções
+
+Há diversos tipos de coleções em C#. Alguns exemplos são:
+
+1. List e SortedList
+
+As listas são tipos fortemente tipados utilizados para adicionar uma informação por vez, e são representadas da seguinte forma:
+
+```csharp
+List<string> dados = new List<string>() {"c"};
+dados.Add("b");
+dados.Add("a");
+```
+
+Pode-se usar a função Sort para ordenar as entradas de uma lista, além de ForEach para interagir com as informações dentro dela.
+
+```csharp
+Console.WriteLine(dados[0]);
+dados.Sort();
+foreach(var a in dados)
+{
+    Console.WriteLine(a);
+}
+
+Console.WriteLine("---------");
+
+dados.ForEach(x =>
+{
+    Console.WriteLine(x);
+});
+
+/*saida:
+c
+a
+b
+c
+---------
+a
+b
+c*/
+```
+
+Já as SortedList são coleções que armazenam chave e valor, de forma que as entradas são ordenadas pelas chaves e acessível apenas por elas. Há por exemplo funções para pesquisar se há determinada chave ou valor.
+
+```csharp
+SortedList<string, int> sortedList = new SortedList<string, int>();
+
+//key deve ser única
+sortedList.Add("Entrada2", 2);
+sortedList.Add("Entrada1", 1);
+
+foreach (var item in sortedList)
+{
+    Console.WriteLine("Key: " + item.Key);
+    Console.WriteLine("Value:" + item.Value);
+}
+
+Console.WriteLine(sortedList.ContainsKey("data 1"));
+Console.WriteLine(sortedList.ContainsValue(1));
+
+/*saida: 
+Key: Entrada1
+Value: 1
+Key: Entrada2
+Value: 2
+True
+True*/
+```
+
+2. Dictionary e SortedDictionary
+
+Os dictionaries são estruturas de dados semelhantes às SortedList, porém não realizam ordenação por chaves.
+
+```csharp
+Dictionary<string, int> dic = new Dictionary<string, int>();
+dic.Add("item 1", 1);
+dic.Add("item 2", 2);
+Console.WriteLine(dic["item 1"]);
+Console.WriteLine(dic.ContainsKey("item 1"));
+Console.WriteLine(dic.ContainsValue(1));
+
+/*saida 
+1
+True
+True*/
+```
+
+Já os SortedDictionary são semelhantes aos SortedList, com a diferença de que usam mais memória e são mais lentas para pesquisas que a SortedList. Porém, para inserções é preferível utilizar SortedDictionary.
+
+```csharp
+SortedDictionary<string, int> sortedDic = new SortedDictionary<string, int>();
+
+sortedDic.Add("data 1", 1);
+sortedDic.Add("data 3", 2);
+sortedDic.Add("data 2", 3);
+
+foreach (var item in sortedDic)
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine(sortedDic["data 1"]);
+
+/*saida:
+1
+True
+True
+[data 1, 1]
+[data 2, 3]
+[data 3, 2]
+1*/
+```
+
+3. Queue e Stack
+
+Queues (filas) e Stack (pilhas) são duas estruturas de dados que podem ser utilizadas da seguinte forma em C#. No primeiro caso o valor 1 é colocado na fila usando Enqueue, o valor é impresso usando Peek e por fim sai da fila usando Dequeue. Analogamente isto ocorre para a pilha com push e pop.
+
+```csharp
+Queue<int> fila = new Queue<int>();
+fila.Enqueue(1);
+Console.WriteLine(fila.Peek());
+fila.Dequeue();
+
+Stack<int> pilha = new Stack<int>();
+pilha.Push(1);
+Console.WriteLine(pilha.Peek());
+pilha.Pop();
+
+/*saida:
+1
+1
+*/
+```
