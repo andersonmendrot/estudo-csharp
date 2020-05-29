@@ -208,7 +208,14 @@ static void Main()
 
 #### Coleções
 
-Há diversos tipos de coleções em C#. Alguns exemplos são:
+Há diversos tipos de coleções em C#. Alguns exemplos estão citados a seguir, sendo que métodos importantes são:
+- *Add*, que adiciona informações às coleções
+- *Count*, que retorna o numero de elementos
+- *Clear*, que limpa as coleções
+- *Remove*, que remove pela chave (no caso do Dictionary, SortedList e SortedDictionary) e pelo valor (na List).
+- *Sort*, que ordena a List
+- *Dequeue*, *queue* e *peek* para as filas
+- *Push*, *pop* e *peek* para pilhas
 
 1. List e SortedList
 
@@ -318,6 +325,8 @@ True
 [data 3, 2]
 1*/
 ```
+
+
 
 3. Queue e Stack
 
