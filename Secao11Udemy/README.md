@@ -1,4 +1,4 @@
-### A seção 6 do curso introduz interfaces e IComparable
+### A seção 11 do curso introduz interfaces e IComparable
 
 Interfaces são usadas para estabelecer um contrato entre uma classe, de forma que ela caso deseje utilizar a interface deve implementar as funções cujas declarações estão contidas na interface. Em C#, não se pode utilizar modificadores de acesso nos membros da interface pois são por padrão todos publicos. É utilizada para desacoplamento de código, como no exemplo abaixo. Nele, há um diagrama de classes que representa um possível uso de interfaces.
 
