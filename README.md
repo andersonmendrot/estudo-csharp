@@ -9,7 +9,10 @@ A separação das anotações se dá por quatro pastas com os tópicos organizad
 2. Seção 5 Udemy: https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao5Udemy/README.md
 3. Seção 10 Udemy: https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao10Udemy/README.md
 4. Seção 11 Udemy: https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao11Udemy/README.md
-5. Módulo 3 Codenation:  https://github.com/andersonmendrot/estudo-csharp/blob/master/Modulo3Codenation/README.md
+5. Módulo 3 Codenation: 
+- https://github.com/andersonmendrot/estudo-csharp/blob/master/Modulo3Codenation/Generics-extensions-exceptions-colecoes.md 
+- https://github.com/andersonmendrot/estudo-csharp/blob/master/Modulo3Codenation/Delegate-Linq-Lambda-parte1.md
+
 
 #### Seções do curso da Udemy:
 
