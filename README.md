@@ -8,7 +8,7 @@ A separação das anotações se dá por quatro pastas com os tópicos organizad
 
 
 1. Seção 4 Udemy
-   - [Resumo](estudo-csharp/blob/master/Secao4Udemy/README.md)
+   - [Resumo](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao4Udemy/README.md)
 2. Seção 5 Udemy 
    - [Resumo](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao5Udemy/README.md)
 3. Seção 10 Udemy:
