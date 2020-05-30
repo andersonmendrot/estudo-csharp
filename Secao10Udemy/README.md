@@ -1,4 +1,4 @@
-### A seção 5 do curso introduz herança e polimorfismo
+### A seção 10 do curso introduz herança e polimorfismo
 
 ##### Herança ou extensão
 
