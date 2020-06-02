@@ -3,14 +3,14 @@
 - Programação Orientada a Objetos de C#: https://www.udemy.com/course/programacao-orientada-a-objetos-csharp
 - AceleraDev C# da CodeNation
 
-A separação das anotações se dá por quatro pastas com os tópicos organizados no curso da Udemy, e uma quinta pasta com eles separados no curso da CodeNation
-
-
+A separação das anotações se dá por cinco pastas com os tópicos organizados no curso da Udemy, e uma quinta pasta com eles separados no curso da CodeNation
 
 1. Seção 4 Udemy
    - [Resumo](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao4Udemy/README.md)
 2. Seção 5 Udemy 
    - [Resumo](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao5Udemy/README.md)
+2. Seção 9 Udemy 
+   - [Resumo](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao9Udemy/README.md)
 3. Seção 10 Udemy:
    - [Resumo](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao10Udemy/README.md)
 4. Seção 11 Udemy
@@ -32,6 +32,10 @@ A separação das anotações se dá por quatro pastas com os tópicos organizad
 3. Palavra this
 4. Encapsulamento
 5. Modificadores de acesso
+
+- Seção 9 : 
+1. Composição
+2. Enums
 
 - Seção 10 : 
 1. Upcasting e downcasting
