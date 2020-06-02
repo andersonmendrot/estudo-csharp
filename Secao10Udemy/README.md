@@ -64,7 +64,7 @@ public class Account
 {
     public int Number { get; protected set; }
 }
-
+```
 ##### Sobreposição ou sobrescrita (uso de virtual/override)
 
 Implementação de método de superclasse na subclasse.
