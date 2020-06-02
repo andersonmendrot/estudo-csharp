@@ -68,7 +68,7 @@ class Program
 Podemos restringir quais *classes* ou *métodos* podem utilizar os Generics com o uso da palavra *where*. Por exemplo, suponha que queremos que apenas as classes genéricas que implementam a interface ICalculoValor possam utilizar o Generics. Dessa forma, teriamos:
 
 ```csharp
-public class CalculoGenerico<T> where T : CalculoValor {
+public class CalculoGenerico<T> where T : ICalculoValor {
     private float _imposto = 0.05;
     private float _lucro = 0.10;
 
