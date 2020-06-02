@@ -175,6 +175,11 @@ public abstract Account{
     public int Method1(int value){
         return value;
     }
+    
+    public virtual double Method2()
+    {
+        return 1.0;
+    }
 
     public abstract double AbstractMethod();
 }
@@ -182,6 +187,99 @@ public abstract Account{
 public SavingsAccount : Account{
     public override double AbstractMethod(){
         return 2.0;
+    }
+    
+    public override double Method2(){
+        return 2.0;
+    }
+}
+```
+
+Segundo exemplo de classe abstrata
+
+A classe abstrata Shape é herdada pelas classes Rectangle e Color. Testes são feitos na classe Program.cs. É utilizado um enum para armazenar as cores.
+
+
+```csharp
+//Shape.cs
+public abstract class Shape
+{
+    public Color Color {get; set;}
+
+    public Shape(Color color)
+    {
+        Color = color;
+    }
+
+    public abstract double Area(); 
+
+    public virtual double Teste()
+    {
+        return 1.0;
+    }
+}
+
+//Circle.cs
+public class Circle : Shape
+{
+    public double Radius { get; set; }
+    public Circle(double radius, Color color): base(color)
+    {
+        Radius = radius;
+    }
+
+    public override double Area()
+    {
+        return 3.14*Radius*Radius;
+    }
+}
+
+//Rectangle.cs
+public class Rectangle : Shape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public Rectangle(double width, double height, Color color) : base(color)
+    {
+        Width = width;
+        Height = height;
+    }
+
+    public override double Area()
+    {
+        return Width * Height;
+    }
+
+    public override double Teste()
+    {
+        return base.Teste();
+    }
+}
+
+//Color.cs
+public enum Color
+{
+    BLACK, BLUE, RED
+}
+
+//Program.cs
+class Program
+{
+    static void Main(string[] args)
+    {
+        Shape rectangle = new Rectangle(2.0, 3.0, Color.BLACK);
+        Shape circle = new Circle(2.0, Color.BLUE);
+        Rectangle rectangle1 = new Rectangle(1.0, 2.0, Color.RED);
+
+        List<Shape> shapes = new List<Shape>() { rectangle, circle, rectangle1 };
+
+        foreach(Shape shape in shapes)
+        {
+            Console.WriteLine(shape.Area());
+        }
+        
+        //saida: 6 12.56 2 
     }
 }
 ```
