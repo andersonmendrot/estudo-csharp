@@ -101,10 +101,11 @@ public class HourContract
 Por fim, é criado também um enum, que é um tipo especial usado para especificar de forma literal um conjunto
 de constantes relacionadas.
 
+```csharp
 public enum WorkerLevel : int
-    {
-        Junior = 0,
-        MidLevel = 1,
-        Senior = 2
-    }
-
+{
+    Junior = 0,
+    MidLevel = 1,
+    Senior = 2
+}
+```
