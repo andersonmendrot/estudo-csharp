@@ -6,13 +6,13 @@ Tipo de associação que permite que um objeto contenha outro, podendo ser rela�
 
 Há diversos tipos de composição, podendo ser entre entidades ou serviços de banco de dados, por exemplo:
 
-![diagrama2](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao9Udemy/diagrama2.png)
+![diagrama2](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao9Udemy/diagrama2.jpg)
 
-![diagrama3](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao9Udemy/diagrama3.png)
+![diagrama3](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao9Udemy/diagrama3.jpg)
 
 O diagrama abaixo mostra um exemplo prático, em que a classe Worker contém um departamento e pode conter vários contratos. O código da classe Worker se encontra abaixo.
 
-![diagrama](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao9Udemy/diagrama.png)
+![diagrama](https://github.com/andersonmendrot/estudo-csharp/blob/master/Secao9Udemy/diagrama.jpg)
 
 Para criar a relação "tem-um" da classe Worker e Department, a classe Worker possui uma propriedade Department do tipo Department. Já para criar a "tem-vários", é criada uma lista de HourContract já instanciada. Como a lista de contratos no exemplo começa vazia, então não é adicionada no construtor do projeto, sendo usada posteriormente no programa principal para cada vez que se desejar adicionar um novo contrato. 
 
